@@ -16,22 +16,44 @@ public class entity {
 
     public void sHeal(){
         if (hp == mHp) {
-            System.out.print("\n\n " + nam + " is already at max health!");
+            kurz();
+            System.out.print(" already is at max health!");
             //System.out.println(mHp);
         }else if(hp+5 > mHp){ //If 5 hp is more than enough, only heal as much as needed
             //double i = hp+5;
             int j = (int) (mHp-hp);
             hp = mHp;
-            System.out.print("\n\n "+nam+" heals "+j+" HP. ("+hp+" HP)"); //Kinda pointless but we need those aesthetics
+            kurz();
+            System.out.print(" heals "+j+" HP. ("+hp+" HP)"); //Kinda pointless but we need those aesthetics
         }else{
             hp = hp+5;
-            System.out.print("\n\n "+nam+" heals 5 HP. ("+hp+" HP)");
+            kurz();
+            System.out.print(" heals 5 HP. ("+hp+" HP)");
+        }
+    }
+
+    public void heal(){
+        if (hp == mHp) {
+            kurz();
+            System.out.print(" already is at max health!");
+            //System.out.println(mHp);
+        }else if(hp+5 > mHp){ //If 5 hp is more than enough, only heal as much as needed
+            //double i = hp+5;
+            int j = (int) (mHp-hp);
+            hp = mHp;
+            kurz();
+            System.out.print(" gets healed by "+j+" HP. ("+hp+" HP)"); //Kinda pointless but we need those aesthetics
+        }else{
+            hp = hp+5;
+            kurz();
+            System.out.print(" gets healed by 5 HP. ("+hp+" HP)");
         }
     }
 
     public void sRecover() {
         if (sp == mSp) {
-            System.out.print("\n\n " + nam + " already has full stamina!");
+            kurz();
+            System.out.print(" already has full stamina!");
             //System.out.println(mHp);
         }else if(sp+5 > mSp){
             //double i = sp+5;
@@ -47,20 +69,27 @@ public class entity {
     }
 
     public void atck(){
-        double i = Math.random()*6;
-        if (i > 2 && i < 5) {
-            kurz();
-            System.out.print(" punches the air. They loose 2 SP." + i);
-            sp = sp - 2;
-        } else if (i<2){
-            kurz();
-            System.out.print(" tries to punch the air but blunders. They loose 2 SP and 1 HP." + i);
-            sp = sp - 2;
-            hp = hp - 1;
-        }else if(i>4){
-            kurz();
-            System.out.print(" strikes a critical hit against the air. The atmosphere retreats. They loose 2 SP." + i);
-            sp = sp - 2;
+        if(sp >= 2) {
+            int i = dc();
+            if (i > 4 && i <= 16) {
+                kurz();
+                System.out.print(" punches the air. ");
+                drslt(i);
+                sp = sp - 2;
+            } else if (i <= 4) {
+                kurz();
+                System.out.print(" tries to punch the air but blunders. They lose 1 HP. ");
+                drslt(i);
+                sp = sp - 2;
+                hp = hp - 1;
+            } else {
+                kurz();
+                System.out.print(" strikes a critical hit against the air. The atmosphere retreats. ");
+                drslt(i);
+                sp = sp - 2;
+            }
+        }else{
+            noSP();
         }
     }
     
@@ -83,8 +112,25 @@ public class entity {
         return brnd;
     }
 
+    public double getSp(){
+        return sp;
+    }
+
     protected void kurz(){
         System.out.print("\n\n "+nam+" the "+hr());
+    }
+
+    protected void noSP(){
+        kurz();
+        System.out.print(" does not have enough SP to do that.");
+    }
+
+    protected int dc(){
+        return (int) (1 + Math.random() * 20);
+    }
+
+    protected void drslt(int i){
+        System.out.print("(Threw "+i+")");
     }
 
     public void setSp(double sp){

@@ -1,16 +1,17 @@
 package de.edward;
 
-import de.edward.players.knight;
-import java.util.Scanner;
+import de.edward.debug.d_options;
+import de.edward.menu.over_options;
 
 public class mains {
 
-    final options o1 =  new options();
+    final d_options o1 =  new d_options();
+    final over_options o2 = new over_options();
 
     public void play(){
-        o1.opti();
+        o1.dOpti();
+        //o2.start();
     }
-
 
     public static void main(String [] args){
         mains m = new mains();

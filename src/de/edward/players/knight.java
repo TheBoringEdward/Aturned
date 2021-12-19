@@ -1,7 +1,5 @@
 package de.edward.players;
 
-import de.edward.players.player;
-
 public class knight extends player {
 
     public knight(String nam){
@@ -11,5 +9,15 @@ public class knight extends player {
         mSp = sp;
         mHp = hp;
         hr = "Knight";
+    }
+
+    public void shield(){
+        if(sp>=2){
+            sp = sp-2;
+            kurz();
+            System.out.print(" brandishes their shield. They aren't quite sure why.");
+        }else{
+            noSP();
+        }
     }
 }
