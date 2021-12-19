@@ -1,23 +1,24 @@
 package de.edward;
 
+import de.edward.players.knight;
+import java.util.Scanner;
+
 public class mains {
 
+    final options o1 =  new options();
+
     public void play(){
-
-        final player p1 = new player ("Player1", 50, 20);
-
-        p1.sHeal();
-        p1.sStats();
-        p1.setSp(10);
-        p1.sStats();
-
-        System.out.println("\n\n It's Friday may dudes!");
-
+        o1.opti();
     }
+
 
     public static void main(String [] args){
-        mains me = new mains();
-        me.play();
-        System.out.print("\n\n --This code has been provided by TheBoringEdward with the help of a great fellow-- \n\n"); //I'm being too clingy to that boi, amn't I?
+        mains m = new mains();
+        m.play();
+        System.out.print("\n\n -- This game has been created by TheBoringEdward with the help of a great fellow -- \n\n");
     }
 }
+
+//      This code has been provided by TheBoringEdward with the help of a great fellow
+//      This code is under the license of the Unlicense
+//      Cheers
