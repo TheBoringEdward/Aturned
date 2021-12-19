@@ -15,6 +15,8 @@ public class entity {
         mSp = sp;
     }
 
+    //Test
+
     public void sHeal(){
         hp = hp+5;
         System.out.print("\n\n "+nam+" healed 5 hp. ("+hp+" hp)");
