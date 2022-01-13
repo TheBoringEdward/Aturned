@@ -1,10 +1,10 @@
 package de.edward.enemies;
 
-import de.edward.entity;
+import de.edward.Entity;
 
-public class enemy extends entity{
+public class Enemy extends Entity {
 
-    public enemy(String nam){
+    public Enemy(String nam){
         super(nam);
         brnd = "enemy";
     }

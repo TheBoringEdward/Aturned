@@ -1,0 +1,4 @@
+There are still multiple issues with the class selection.
+I have no clue how to fix the issue atm.
+
+I may have to add localisation.

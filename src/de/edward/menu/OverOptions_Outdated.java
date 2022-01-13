@@ -2,11 +2,11 @@ package de.edward.menu;
 
 import java.util.Scanner;
 
-public class over_options {
+public class OverOptions_Outdated {
 
     Scanner scn2 = new Scanner(System.in);
 
-    final options o2 = new options();
+    final Options_Outdated o2 = new Options_Outdated();
 
     public void start(){
         System.out.print("\n\n Choose a class.\n 1: Knight\n 2: Archer\n");
@@ -16,3 +16,4 @@ public class over_options {
         o2.start_opti(name, clas);
     }
 }
+//          OUTDATED!!!

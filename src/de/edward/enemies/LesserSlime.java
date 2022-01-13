@@ -1,8 +1,8 @@
 package de.edward.enemies;
 
-public class lesser_slime extends enemy{
+public class LesserSlime extends Enemy {
 
-    public lesser_slime(String nam){
+    public LesserSlime(String nam){
         super(nam);
         this.hp = 20;
         this.sp = 99999;

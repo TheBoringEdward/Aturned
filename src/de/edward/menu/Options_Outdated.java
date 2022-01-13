@@ -1,11 +1,8 @@
 package de.edward.menu;
 
-import de.edward.players.knight;
-import de.edward.players.archer;
-
 import java.util.Scanner;
 
-public class options{
+public class Options_Outdated {
 
     Scanner scn2 = new Scanner(System.in);
 
@@ -14,9 +11,9 @@ public class options{
 
     public void start_opti(String nam, int clas){
 
-        /*
-        knight fe0;
-        archer fe0;
+       /*
+        //knight fe0;
+        //archer fe0;
         switch (clas) {
             default -> System.out.print("\n " + clas + " is not a valid command."); //This is going to cause issues later on
             case 1 -> {
@@ -42,7 +39,7 @@ public class options{
                 case 2 -> fe0.atck();
                 case 3 -> fe0.sHeal();
             }
-        } //TODO: Put option classes in their own package
+        }
 */
         System.out.println("\n\n It's Friday my dudes!");
 

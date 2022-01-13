@@ -1,13 +1,13 @@
 package de.edward.debug;
 
-import de.edward.mains;
-import de.edward.players.knight;
-import de.edward.enemies.lesser_slime;
+import de.edward.Mains;
+import de.edward.players.Knight;
+import de.edward.enemies.LesserSlime;
 
-public class debug_stuff extends mains {
+public class DebugColumn extends Mains {
     public void debug(){
-        final knight p2 = new knight ("Harold");
-        final lesser_slime e2 = new lesser_slime ("Brutus");
+        final Knight p2 = new Knight("Harold");
+        final LesserSlime e2 = new LesserSlime("Brutus");
         p2.sHeal();
         p2.sStats();
         p2.setSp(10);

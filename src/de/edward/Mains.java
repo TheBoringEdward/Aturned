@@ -1,20 +1,17 @@
 package de.edward;
 
-import de.edward.debug.d_options;
-import de.edward.menu.over_options;
+import de.edward.menu.ActionSelect;
 
-public class mains {
+public class Mains {
 
-    final d_options o1 =  new d_options();
-    final over_options o2 = new over_options();
+    final ActionSelect o1 =  new ActionSelect();
 
     public void play(){
         o1.dOpti();
-        //o2.start();
     }
 
     public static void main(String [] args){
-        mains m = new mains();
+        Mains m = new Mains();
         m.play();
         System.out.print("\n\n -- This game has been created by TheBoringEdward with the help of a great fellow -- \n\n");
     }

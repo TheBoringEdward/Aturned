@@ -1,8 +1,8 @@
 package de.edward.players;
 
-public class knight extends player {
+public class Knight extends Player {
 
-    public knight(String nam){
+    public Knight(String nam){
         super(nam);
         this.hp = 100;
         this.sp = 20;

@@ -1,6 +1,6 @@
 package de.edward;
 
-public class entity {
+public class Entity {
 
     protected String nam; //name
     protected double hp; //health points
@@ -10,7 +10,7 @@ public class entity {
     protected String brnd; //brand
     protected String hr; //species
 
-    public entity(String nam){
+    public Entity(String nam){
         this.nam = nam;
     }
 
@@ -92,6 +92,17 @@ public class entity {
             noSP();
         }
     }
+
+    public void atckslf(){
+        if(sp >= 1) {
+            kurz();
+            System.out.print(" decides that it isn't worth it. They loose 4 HP. ");
+            hp = hp - 4;
+            sp = sp - 1;
+        }else{
+            noSP();
+        }
+    }
     
     public void sStats(){
         System.out.print("\n\n The "+brnd()+" " + nam + " is a " + hr() + " with " + hp + " HP. They have a maximum stamina of " + mSp);
@@ -102,7 +113,7 @@ public class entity {
             System.out.print(".");
         }
             //System.out.print("\n\n " + nam + " is a " + hr() + " with " + hp + " HP. They have a maximum stamina of " + mSp + " of which they have " + sp + " points left.");
-    } //TODO: Add stamina system; Add multiple entities
+    }
 
     protected String hr(){
         return hr;
@@ -128,6 +139,8 @@ public class entity {
     protected int dc(){
         return (int) (1 + Math.random() * 20);
     }
+
+    public String ham(){return nam;}
 
     protected void drslt(int i){
         System.out.print("(Threw "+i+")");
