@@ -1,10 +1,10 @@
 package de.edward.menu;
 
-import de.edward.debug.DebugColumn;
-import de.edward.players.Archer;
-import de.edward.players.Knight;
-import de.edward.localisation.en_GB;
-import de.edward.players.Player;
+import de.edward.enities.players.Archer;
+import de.edward.enities.players.Knight;
+import de.edward.enities.players.Player;
+
+//import de.edward.localisation.en_GB;
 
 import java.util.Scanner;
 
@@ -18,10 +18,6 @@ public class ActionSelect {
     public void dOpti() {
 
         //knight p1 = new knight ("Player1point2");
-
-        final DebugColumn a1 = new DebugColumn();
-
-        a1.debug();
 
         //create an entity
         final Player p1;
@@ -46,11 +42,12 @@ public class ActionSelect {
             }
         }
 
-        en_GB k = new en_GB(p1.ham(), p1.getSp()); //This is really just a proof of concept.
+        //en_GB k = new en_GB(p1.ham(), p1.getSp(), p1.brnd()); //This is really just a proof of concept.
                                                     //It proves that it is shit.
         while (rn) {
-            k.test();
-            int a = scn2.nextInt();
+            //k.test();
+            System.out.print("\n\n Commands at your disposal ("+p1.getNam()+", "+p1.hr()+", "+p1.getSp()+"SP, "+p1.getHp()+"HP):\n 0: Quit\n 1: Check Self\n 2: Attack (2 SP)\n 3: Heal Self\n 4: Recover\n 5: Brandish Shield (2 SP)\n 6: Damage Self (1 SP)\n");
+            int a = scn2.nextInt(); // TODO: Make the print above an array. Also limit the options in the "final" version.
             switch (a) {
                 default -> System.out.print("\n " + a + " is not a valid command.");
                 case 0 -> {
@@ -70,8 +67,7 @@ public class ActionSelect {
                 case 3 -> p1.sHeal();
                 case 4 -> p1.sRecover();
                 case 5 -> {
-                    if (p1 instanceof Knight) {
-                        final Knight tst = (Knight) p1;
+                    if (p1 instanceof final Knight tst) {
                         tst.shield();
                     }
                 }

@@ -1,6 +1,6 @@
-package de.edward.enemies;
+package de.edward.enities.enemies;
 
-import de.edward.Entity;
+import de.edward.enities.Entity;
 
 public class Enemy extends Entity {
 

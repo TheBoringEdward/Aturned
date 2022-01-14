@@ -1,4 +1,4 @@
-package de.edward.enemies;
+package de.edward.enities.enemies;
 
 public class LesserSlime extends Enemy {
 

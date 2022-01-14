@@ -1,4 +1,4 @@
-package de.edward;
+package de.edward.enities;
 
 public class Entity {
 
@@ -115,12 +115,16 @@ public class Entity {
             //System.out.print("\n\n " + nam + " is a " + hr() + " with " + hp + " HP. They have a maximum stamina of " + mSp + " of which they have " + sp + " points left.");
     }
 
-    protected String hr(){
+    public String hr(){
         return hr;
     }
 
-    protected String brnd(){
+    public String brnd(){
         return brnd;
+    }
+
+    public double getHp() {
+        return hp;
     }
 
     public double getSp(){
@@ -140,7 +144,7 @@ public class Entity {
         return (int) (1 + Math.random() * 20);
     }
 
-    public String ham(){return nam;}
+    public String getNam(){return nam;}
 
     protected void drslt(int i){
         System.out.print("(Threw "+i+")");

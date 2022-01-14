@@ -1,6 +1,6 @@
-package de.edward.players;
+package de.edward.enities.players;
 
-import de.edward.Entity;
+import de.edward.enities.Entity;
 
 public class Player extends Entity {
 

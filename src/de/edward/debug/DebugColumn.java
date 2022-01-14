@@ -1,10 +1,9 @@
 package de.edward.debug;
 
-import de.edward.Mains;
-import de.edward.players.Knight;
-import de.edward.enemies.LesserSlime;
+import de.edward.enities.players.Knight;
+import de.edward.enities.enemies.LesserSlime;
 
-public class DebugColumn extends Mains {
+public class DebugColumn {
     public void debug(){
         final Knight p2 = new Knight("Harold");
         final LesserSlime e2 = new LesserSlime("Brutus");
@@ -22,5 +21,7 @@ public class DebugColumn extends Mains {
         p2.sHeal();
         p2.sStats();
         e2.sStats();
+        e2.atck();
+        e2.atckslf();
     }
 }

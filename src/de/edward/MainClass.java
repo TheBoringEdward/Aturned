@@ -1,17 +1,21 @@
 package de.edward;
 
+import de.edward.debug.DebugColumn;
 import de.edward.menu.ActionSelect;
 
-public class Mains {
+public class MainClass {
 
     final ActionSelect o1 =  new ActionSelect();
+    final DebugColumn a1 = new DebugColumn();
+
 
     public void play(){
+        a1.debug();
         o1.dOpti();
     }
 
     public static void main(String [] args){
-        Mains m = new Mains();
+        MainClass m = new MainClass();
         m.play();
         System.out.print("\n\n -- This game has been created by TheBoringEdward with the help of a great fellow -- \n\n");
     }

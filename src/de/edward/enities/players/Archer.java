@@ -1,4 +1,4 @@
-package de.edward.players;
+package de.edward.enities.players;
 
 public class Archer extends Player {
 
