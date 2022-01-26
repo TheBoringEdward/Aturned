@@ -2,16 +2,19 @@ package de.edward;
 
 import de.edward.debug.DebugColumn;
 import de.edward.menu.ActionSelect;
+import de.edward.menu.AS;
 
 public class MainClass {
 
     final ActionSelect o1 =  new ActionSelect();
     final DebugColumn a1 = new DebugColumn();
+    final AS a2 = new AS();
 
 
     public void play(){
-        a1.debug();
-        o1.dOpti();
+        //a1.debug();
+        //o1.dOpti();
+        a2.dOpti();
     }
 
     public static void main(String [] args){

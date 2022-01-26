@@ -9,6 +9,7 @@ public class Entity {
     protected double mSp; //may stamina points
     protected String brnd; //brand
     protected String hr; //species
+    protected double dmg; //damage output
 
     public Entity(String nam){
         this.nam = nam;
@@ -68,7 +69,7 @@ public class Entity {
         }
     }
 
-    public void atck(){
+    public void atckAir(){
         if(sp >= 2) {
             int i = dc();
             if (i > 4 && i <= 16) {
@@ -85,6 +86,28 @@ public class Entity {
             } else {
                 kurz();
                 System.out.print(" strikes a critical hit against the air. The atmosphere retreats. ");
+                drslt(i);
+                sp = sp - 2;
+            }
+        }else{
+            noSP();
+        }
+    }
+
+    public void atck(){
+        if(sp >= 2) {
+            int i = dc();
+            if (i > 4 && i <= 16) {
+                kurz();
+                drslt(i);
+                sp = sp - 2;
+            } else if (i <= 4) {
+                kurz();
+                drslt(i);
+                sp = sp - 2;
+                hp = hp - 1;
+            } else {
+                kurz();
                 drslt(i);
                 sp = sp - 2;
             }
@@ -115,6 +138,12 @@ public class Entity {
             //System.out.print("\n\n " + nam + " is a " + hr() + " with " + hp + " HP. They have a maximum stamina of " + mSp + " of which they have " + sp + " points left.");
     }
 
+    public void takeDmg(double a){
+        kurz();
+        hp = hp - a;
+        System.out.print(" looses "+a+" HP. ("+hp+"HP)");
+    }
+
     public String hr(){
         return hr;
     }
@@ -129,6 +158,10 @@ public class Entity {
 
     public double getSp(){
         return sp;
+    }
+
+    public double getDmg() {
+        return dmg;
     }
 
     protected void kurz(){
@@ -153,6 +186,10 @@ public class Entity {
     public void setSp(double sp){
         this.sp = sp;
         System.out.print("\n\n "+nam+"'s SP set to "+this.sp);
+    }
+
+    public void rcSp(double sp){
+        this.sp = this.sp - sp;
     }
 
     public void setHp(double hp){

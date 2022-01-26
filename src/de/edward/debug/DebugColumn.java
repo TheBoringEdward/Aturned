@@ -11,7 +11,7 @@ public class DebugColumn {
         p2.sStats();
         p2.setSp(10);
         p2.sStats();
-        p2.atck();
+        p2.atckAir();
         p2.sStats();
         p2.sRecover();
         p2.sRecover();
@@ -21,7 +21,7 @@ public class DebugColumn {
         p2.sHeal();
         p2.sStats();
         e2.sStats();
-        e2.atck();
+        e2.atckAir();
         e2.atckslf();
     }
 }

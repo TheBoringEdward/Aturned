@@ -1,5 +1,6 @@
 package de.edward.menu;
 
+import de.edward.enities.enemies.LesserSlime;
 import de.edward.enities.players.Archer;
 import de.edward.enities.players.Knight;
 import de.edward.enities.players.Player;
@@ -8,12 +9,12 @@ import de.edward.enities.players.Player;
 
 import java.util.Scanner;
 
-public class ActionSelect {
+public class AS {
 
     Scanner scn2 = new Scanner(System.in);
 
     private boolean rn = true;
-    private boolean strt = true;
+    //private boolean strt = true;
 
     public void dOpti() {
 
@@ -42,11 +43,14 @@ public class ActionSelect {
             }
         }
 
+        final LesserSlime e2 = new LesserSlime("Brutus");
+
         //en_GB k = new en_GB(p1.ham(), p1.getSp(), p1.brnd()); //This is really just a proof of concept.
-                                                    //It proves that it is shit.
+        //It proves that it is shit.
         while (rn) {
+            e2.takeDmg(p1.getDmg());
             //k.test();
-            System.out.print("\n\n Commands at your disposal ("+p1.getNam()+", "+p1.hr()+", "+p1.getSp()+"SP, "+p1.getHp()+"HP):\n 0: Quit\n 1: Check Self\n 2: Attack (2 SP)\n 3: Heal Self\n 4: Recover\n 5: Brandish Shield (2 SP)\n 6: Damage Self (1 SP)\n");
+            System.out.print("\n\n Commands at your disposal ("+p1.getNam()+", "+p1.hr()+", "+p1.getSp()+"SP, "+p1.getHp()+"HP):\n 0: Quit\n 1: Check Self\n 2: Attack Slime (2 SP)\n 3: Heal Self\n 4: Recover\n 5: Brandish Shield (2 SP)\n 6: Damage Self (1 SP)\n");
             int a = scn2.nextInt(); // TODO: Make the print above an array. Also limit the options in the "final" version.
             switch (a) {
                 default -> System.out.print("\n " + a + " is not a valid command.");
@@ -63,7 +67,10 @@ public class ActionSelect {
                     }
                 }
                 case 1 -> p1.sStats();
-                case 2 -> p1.atckAir();
+                case 2 -> {
+                    p1.atck();
+                    e2.takeDmg(p1.getDmg()); //TODO: FIX THE COMBAT OPTIONS!!!
+                }
                 case 3 -> p1.sHeal();
                 case 4 -> p1.sRecover();
                 case 5 -> {

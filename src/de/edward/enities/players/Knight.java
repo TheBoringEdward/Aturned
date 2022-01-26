@@ -6,6 +6,7 @@ public class Knight extends Player {
         super(nam);
         this.hp = 100;
         this.sp = 20;
+        this.dmg = 10;
         mSp = sp;
         mHp = hp;
         hr = "Knight";
